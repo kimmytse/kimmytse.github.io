@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate">
+  <title>Feign的实现原理 &middot; Kimmy&#39;s Blog</title>
+  <meta name="keywords" content="Kimmy">
+  <meta name="description" content="Kimmy">
+  <meta name="author" content="Kimmy Tse">
+  <link rel="icon" type="image/png" href="">
+  <link rel="stylesheet" href="/css/diaspora.css">
+  <link rel="stylesheet" href="/css/insight.css">
+  <link rel="stylesheet" href="/css/custom.css">
+</head><body class="loading">
+        <div id="loading"></div>
+				<div id="nav"></div>
+				<div class="nav-user"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+        <div class="bar">
+        </div>
+        <a class="icon-icon" href="javascript:history.back()">
+        </a>
+        <div title="播放/暂停" class="icon-play">
+        </div>
+        
+        <h3 class="subtitle" style="display: none;">
+        Feign的实现原理</h3>
+        <div class="social">
+            <div>
+                <div class="share">
+                    <a title="获取二维码" class="icon-wechat" href="javascript:;"></a>
+                </div>
+                <div id="qr"></div>
+            </div>
+        </div>
+        <div class="scrollbar" style="width: 1.1636%;"></div>
+    </div>
+    <div class="section">
+        <div class="article">
+            <div>
+                <h1 class="title">
+                Feign的实现原理</h1>
+                <div class="stuff">
+                    
+                    <span>December 11, 2019</span>
+                    <span>字数 551</span>
+                    
+                    
+                </div>
+                <div class="content">
+                    <h3 id="什么是feign">什么是Feign</h3>
+<p>Feign  是一个http请求调用的轻量级框架，可以以Java接口注解的方式调用Http请求。Feign通过处理注解，将请求模板化，当实际调用的时候，传入参数，根据参数再应用到请求上，进而转化成真正的请求，这种请求相对而言比较直观。
+Feign被广泛应用在Spring Cloud 的解决方案中，是学习基于Spring Cloud 微服务架构不可或缺的重要组件。<br>
+开源项目地址：
+<a href="https://github.com/OpenFeign/feign">https://github.com/OpenFeign/feign</a></p>
+<h3 id="feign调用框架执行流程">Feign调用框架执行流程：</h3>
+<hr>
+<p><img src="https://raw.githubusercontent.com/kimmytse/myImg/master/clipboard.png" alt=""></p>
+<hr>
+<p>程序启动时，检查是或否有@EnableFeignClient注解，如果启动类有这个注解，就开启包扫描，扫描被@FeignClient注解的接口。找到这样接口之后会把接口名和注解信息一块取出来，赋值给BeanDefinitionBuilder，然后根据BeanDefinitionBuilder得到BeanDefinition然后把BeanDefinition注入到IOC容器当中。
+注入BeanDefinition之后，通过JDK的代理，如果调用Feign Client接口里面的方法，这个方法会被拦截，然后在SynchronousMethodHandler类当中进行拦截处理，根据RequestTemplate生成Request请求对象，然后通过HTTP client进行HTTP请求获取response</p>
+<p>参考原文链接：
+<a href="https://blog.csdn.net/shida_hu/article/details/89443240">https://blog.csdn.net/shida_hu/article/details/89443240</a></p>
+
+                    
+                    <audio id="audio" loop="1" preload="auto" style="width: 100%;" controls="controls">
+                        <source type="audio/mpeg" src="/mp3/%e8%a1%97%e9%81%93%e7%9a%84%e5%af%82%e5%af%9e.mp3">
+                        <a href="/mp3/%e8%a1%97%e9%81%93%e7%9a%84%e5%af%82%e5%af%9e.mp3">/mp3/街道的寂寞.mp3</a>
+                    </audio>
+                </div>
+                <div class="comment-wrap">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relate">
+        <ul>
+            <h3 id="prev_next">
+                <em>相 关 文 章</em>
+                <span>
+                    <a href="javascript: window.scrollTo(0, 0);">
+                    返回顶部</a>
+                    
+                    
+                        <a href="https://www.lovelpy.cn/posts/redis%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%AE%9E%E7%8E%B0/" rel="next">下一篇</a>
+                    
+                </span>
+            </h3>
+            
+            
+            
+                
+                    
+                
+            
+        </ul>
+    </div>
+</div>
+<p style="text-align: center;">
+  <a style="color: inherit" target="_blank" href="https://github.com/honjun/hugo-theme-diaspora"></a>
+</p>
+
+<script>
+  var siteTitle = "Kimmy's Blog";
+</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/InsightSearch.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Kimmy&#39;s Blog</title>
+    <link>https://www.lovelpy.cn/tags/</link>
+    <description>Recent content in Tags on Kimmy&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 17 Mar 2020 17:17:34 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.lovelpy.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>tag1</title>
+      <link>https://www.lovelpy.cn/tags/tag1/</link>
+      <pubDate>Tue, 17 Mar 2020 17:17:34 +0800</pubDate>
+      
+      <guid>https://www.lovelpy.cn/tags/tag1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tag2</title>
+      <link>https://www.lovelpy.cn/tags/tag2/</link>
+      <pubDate>Tue, 17 Mar 2020 17:17:34 +0800</pubDate>
+      
+      <guid>https://www.lovelpy.cn/tags/tag2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://www.lovelpy.cn/tags/Java/</link>
+      <pubDate>Wed, 11 Dec 2019 20:36:51 +0800</pubDate>
+      
+      <guid>https://www.lovelpy.cn/tags/Java/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
