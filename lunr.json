@@ -11,5 +11,13 @@
         "uri": "/posts/redis分布式锁实现",
         "content": "\r\n### Redis分布式锁Demo项目相关配置\r\n#### application.properties\r\n#redis 连接配置  \r\nspring.redis.host=localhost  \r\nspring.redis.port=6379  \r\nspring.redis.jedis.poo",
         "tags": []
+    },
+    {
+        "uri": "/posts/简单的压力测试工具ApacheBench安装与使用",
+        "title": "简单的压力测试工具Apache Bench安装与使用",
+        "content": "简单的压力测试工具Apache Bench安装与使用",
+        "tags": [
+            "Java"
+        ]
     }
 ]

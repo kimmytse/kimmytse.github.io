@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Kimmy&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 17 Mar 2020 17:17:34 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2020 20:36:51 +0800</lastBuildDate>
     
 	<atom:link href="https://www.lovelpy.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java</title>
+      <link>https://www.lovelpy.cn/tags/Java/</link>
+      <pubDate>Thu, 26 Mar 2020 20:36:51 +0800</pubDate>
+      
+      <guid>https://www.lovelpy.cn/tags/Java/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>tag1</title>
@@ -26,15 +35,6 @@
       <pubDate>Tue, 17 Mar 2020 17:17:34 +0800</pubDate>
       
       <guid>https://www.lovelpy.cn/tags/tag2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>https://www.lovelpy.cn/tags/Java/</link>
-      <pubDate>Wed, 11 Dec 2019 20:36:51 +0800</pubDate>
-      
-      <guid>https://www.lovelpy.cn/tags/Java/</guid>
       <description></description>
     </item>
     

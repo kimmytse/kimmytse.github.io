@@ -3,32 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.lovelpy.cn/categories/</loc>
+    <lastmod>2020-03-26T20:36:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.lovelpy.cn/tags/Java/</loc>
+    <lastmod>2020-03-26T20:36:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.lovelpy.cn/series/Java/</loc>
+    <lastmod>2020-03-26T20:36:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.lovelpy.cn/categories/Java/</loc>
+    <lastmod>2020-03-26T20:36:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.lovelpy.cn/posts/</loc>
+    <lastmod>2020-03-26T20:36:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.lovelpy.cn/series/</loc>
+    <lastmod>2020-03-26T20:36:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.lovelpy.cn/tags/</loc>
+    <lastmod>2020-03-26T20:36:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.lovelpy.cn/posts/%E7%AE%80%E5%8D%95%E7%9A%84%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7Apache-Bench%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2020-03-26T20:36:51+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.lovelpy.cn/categories/123/</loc>
     <lastmod>2020-03-17T17:17:34+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.lovelpy.cn/categories/</loc>
-    <lastmod>2020-03-17T17:17:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.lovelpy.cn/series/Java/</loc>
-    <lastmod>2020-03-17T17:17:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.lovelpy.cn/posts/</loc>
-    <lastmod>2020-03-17T17:17:34+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.lovelpy.cn/posts/redis%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2020-03-17T17:17:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.lovelpy.cn/series/</loc>
     <lastmod>2020-03-17T17:17:34+08:00</lastmod>
   </url>
   
@@ -43,22 +63,7 @@
   </url>
   
   <url>
-    <loc>https://www.lovelpy.cn/tags/</loc>
-    <lastmod>2020-03-17T17:17:34+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.lovelpy.cn/posts/Feign%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</loc>
-    <lastmod>2019-12-11T20:36:51+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.lovelpy.cn/tags/Java/</loc>
-    <lastmod>2019-12-11T20:36:51+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.lovelpy.cn/categories/Java/</loc>
     <lastmod>2019-12-11T20:36:51+08:00</lastmod>
   </url>
   

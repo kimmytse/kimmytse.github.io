@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate">
+  <title>简单的压力测试工具Apache Bench安装与使用 &middot; Kimmy&#39;s Blog</title>
+  <meta name="keywords" content="Kimmy">
+  <meta name="description" content="Kimmy">
+  <meta name="author" content="Kimmy Tse">
+  <link rel="icon" type="image/png" href="">
+  <link rel="stylesheet" href="/css/diaspora.css">
+  <link rel="stylesheet" href="/css/insight.css">
+  <link rel="stylesheet" href="/css/custom.css">
+</head><body class="loading">
+        <div id="loading"></div>
+				<div id="nav"></div>
+				<div class="nav-user"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+        <div class="bar">
+        </div>
+        <a class="icon-icon" href="javascript:history.back()">
+        </a>
+        <div title="播放/暂停" class="icon-play">
+        </div>
+        
+        <h3 class="subtitle" style="display: none;">
+        简单的压力测试工具Apache Bench安装与使用</h3>
+        <div class="social">
+            <div>
+                <div class="share">
+                    <a title="获取二维码" class="icon-wechat" href="javascript:;"></a>
+                </div>
+                <div id="qr"></div>
+            </div>
+        </div>
+        <div class="scrollbar" style="width: 1.1636%;"></div>
+    </div>
+    <div class="section">
+        <div class="article">
+            <div>
+                <h1 class="title">
+                简单的压力测试工具Apache Bench安装与使用</h1>
+                <div class="stuff">
+                    
+                    <span>March 26, 2020</span>
+                    <span>字数 2566</span>
+                    
+                    
+                </div>
+                <div class="content">
+                    <h2 id="1-背景">1. 背景</h2>
+<p>  作为一名后端测试，开发的接口可能经常会被测试同事反馈说：“最近你的接口超时比较多啊，或者接口响应时间比较慢，是不是性能有问题？”有时候因为公司的测试资源不足，更多时候要求开发者自己保证开发功能的质量，相当于要兼顾部分QA的职能。<br>
+  因此，在完成个人的开发需求准备上线之前，我们都应该对自己的接口进行一个简单的压力测试。现在部分规范比较好的公司甚至都会对接口有一定的并发性能要求，所以我们需要一些比较方便的工具去做接口的压力测试。<br>
+  在平时开发中，可能接触的比较多的测试工具可能是jmeter，jmeter需要依赖JDK环境，有简洁的图形界面，但是使用还是比较复杂；其他的如LoadRunner需要自己写脚本，wrk/wrk2需要编译等等使用起来也是比较复杂，所以今天在这里推荐一款比较好用又简单的压测工具&ndash;Apache Bench。</p>
+<h2 id="2-apache-bench简介">2. Apache Bench简介</h2>
+<p>  Apache Bench 是 Apache 服务器自带的一个web压力测试工具，简称ab。ab又是一个命令行工具，对发起负载的本机要求很低，根据ab命令可以创建很多的并发访问线程，模拟多个访问者同时对某一URL地址进行访问，因此可以用来测试目标服务器的负载压力。总的来说ab工具小巧简单，上手学习较快，开箱即用,可以提供需要的基本性能指标，但是没有图形化结果，不能监控。<br>
+  Apache Bench进行的测试本质是居于Http协议，大致可以理解为对web服务器软件的黑盒性能测试。</p>
+<hr>
+<h3 id="21-apache-bench的安装与使用">2.1 Apache Bench的安装与使用</h3>
+<h4 id="windows环境">Windows环境：</h4>
+<p>首先需要安装Apache服务器，下载地址：https://www.apachelounge.com/download/<br>
+解压包解压到对应的路径即可。</p>
+<p><img src="https://note.youdao.com/yws/public/resource/ee470bdb3eab4e856c09c8082955274d/xmlnote/AA57BFDA4425432EBAE3F813555D9766/10938" alt=""></p>
+<p>打开cmd,进入解压后apache服务器的bin目录,<code>cd F:\apacheBench\Apache24\bin</code>
+命令窗口输入<code>ab.exe -n 500 -c 100 localhost:8081/user/rsa/publickey</code>即可完成对  <code>localhost:8081/user/rsa/publickey</code>地址的压测。</p>
+<p><img src="https://note.youdao.com/yws/public/resource/ee470bdb3eab4e856c09c8082955274d/xmlnote/72B1ECA6E86442D9BDF7A963BD1550D8/10940" alt=""></p>
+<!-- raw HTML omitted -->
+<h4 id="linux环境">Linux环境：</h4>
+<p>Linux环境下，直接执行命令安装</p>
+<pre><code>yum -y install httpd-tools
+</code></pre>
+<p>装好之后，运行一下ab -V就可以看到版本信息。</p>
+<pre><code>ab -V  
+This is ApacheBench, Version 2.3 &lt;$Revision: 1430300 $&gt;  
+Copyright 1996 Adam Twiss, Zeus Technology Ltd,  
+http://www.zeustech.net/  
+Licensed to The Apache Software Foundation, http://www.apache.org/
+</code></pre>
+<p>运行一下ab -h就可以看到帮助信息。</p>
+<pre><code>ab -h
+Options are:
+    #总请求数
+    -n requests     Number of requests to perform
+    #请求并发数
+    -c concurrency  Number of multiple requests to make at a time
+    -t timelimit    Seconds to max. to spend on benchmarking
+                    This implies -n 50000
+    -s timeout      Seconds to max. wait for each response
+                    Default is 30 seconds
+    -b windowsize   Size of TCP send/receive buffer, in bytes
+    -B address      Address to bind to when making outgoing connections
+    #包含了需要post的数据的文件，使用方法是 -p param.txt
+    -p postfile     File containing data to POST. Remember also to set -T
+    #包含了PUT请求的数据的文件，使用方法是 -u param.txt
+    -u putfile      File containing data to PUT. Remember also to set -T
+    #POST/PUT数据所使用的Content-type头信息
+    -T content-type Content-type header to use for POST/PUT data, eg.
+                'application/x-www-form-urlencoded'
+                Default is 'text/plain'
+    #设置显示信息的详细程度 - 4或者更大值会显示头信息，3或更大值可以显示相应代码(404,200等)，2或更大值可以显示警告和其他信息
+    -v verbosity    How much troubleshooting info to print
+    -w              Print out results in HTML tables
+    -i              Use HEAD instead of GET
+    -x attributes   String to insert as table attributes
+    -y attributes   String to insert as tr attributes
+    -z attributes   String to insert as td or th attributes
+    -C attribute    Add cookie, eg. 'Apache=1234'. (repeatable)
+    -H attribute    Add Arbitrary header line, eg. 'Accept-Encoding: gzip'
+                Inserted after all normal header lines. (repeatable)
+    -A attribute    Add Basic WWW Authentication, the attributes
+                are a colon separated username and password.
+    -P attribute    Add Basic Proxy Authentication, the attributes
+                are a colon separated username and password.
+    -X proxy:port   Proxyserver and port number to use
+    -V              Print version number and exit
+    -k              Use HTTP KeepAlive feature
+    -d              Do not show percentiles served table.
+    -S              Do not show confidence estimators and warnings.
+    -q              Do not show progress when doing more than 150 requests
+    -l              Accept variable document length (use this for dynamic pages)
+    #把所有测试结果写入一个 “gnuplot” 或者TSV（以TAB分割）文件
+    -g filename     Output collected data to gnuplot format file.
+    #产生一个逗号分割（CSV）文件，其中包含了处理每个百分比请求（从1%到100%）所需要的的相应百分比时间（以 ms 为单位）
+    -e filename     Output CSV file with percentages served
+    -r              Don't exit on socket receive errors.
+    -m method       Method name
+    -h              Display usage information (this message)
+</code></pre>
+<p>帮助信息有很多，也比较详细，所以我把一些常用的参数都添加了注释，方便大家查看。</p>
+<p>其中最常用的两个参数是 <code>-c</code> 和 <code>-n</code>，当然如果是<code>POST/PUT</code>请求的话，还离不开 <code>-T</code> 和 <code>-p</code>。</p>
+<p>说了不少废话，来看看怎么使用才是重点。</p>
+<p>下面准备了两个简单的接口来进行演示，测试环境是VM虚拟机安装的CentOS 2c4g,写好springboot项目，<code>nohup</code>不挂起运行，<code>ps -ef|grep java</code>看下程序运行起来了没。</p>
+<pre><code>@RestController
+public class BaseController {
+
+    @GetMapping(&quot;/user/rsa/publickey&quot;)
+    @ResponseBody
+    public String publicKey(){
+        return RsaEncryptUtil.getPublicKey();
+    }
+}
+</code></pre>
+<p>先来压一下GET请求的接口， 100并发，500个请求。</p>
+<pre><code>ab -c 100 -n 500 localhost:8081/user/rsa/publickey
+</code></pre>
+<p><img src="https://note.youdao.com/yws/public/resource/ee470bdb3eab4e856c09c8082955274d/xmlnote/64E468D7DCE74497926997FB4B7C399B/11078" alt=""></p>
+<!-- raw HTML omitted -->
+<p><strong>post.json</strong>
+文件，里面就一个字符串</p>
+<pre><code>cat /tmp/post.json
+&quot;Post&quot;
+</code></pre>
+<p>在压测命令里面，指定<code>Content-Type</code>为<code>application/json</code>， 参数的数据文件路径是<code>/tmp/post.json</code></p>
+<p>同样也是100并发，500个请求,springboot项目测试接口改为支持<code>post</code>请求即可。</p>
+<pre><code>ab -c 100 -n 500 -T &quot;application/json&quot; -p /tmp/post.json localhost:8081/user/rsa/publickey
+</code></pre>
+<hr>
+<!-- raw HTML omitted -->
+<pre><code>Server Software:                   # 服务器软件名称
+Server Hostname:        localhost  # 服务器主机名
+Server Port:            8081  # 服务器端口
+
+Document Path:          /user/rsa/publickey  # 测试的URL路径
+Document Length:        736 bytes  # 文档大小
+
+Concurrency Level:      100  # 并发数
+Time taken for tests:   0.420 seconds  # 消耗的总时间
+Complete requests:      500  # 总次数
+Failed requests:        0  # 失败的请求数
+Write errors:           0  # 网络连接写入错误数
+Total transferred:      680000 bytes  # 传输的总数据量
+HTML transferred:       15000 bytes  # HTML文档的总数据量
+Requests per second:    1190.43 [#/sec] (mean)  # (平均每秒的请求数) 这个是非常重要的参数数值，服务器的吞吐量 
+Time per request:       95.446 [ms] (mean)  # (所有并发用户都请求一次的平均时间)
+Time per request:       0.477 [ms] (mean, across all concurrent requests)  # (单个用户请求一次的平均时间)
+Transfer rate:          278.30 [Kbytes/sec] received   # 每秒获取的数据长度 (传输速率，单位：KB/s)
+
+# 网络上消耗的时间的分解
+Connection Times (ms)  
+              min  mean[+/-sd] median   max
+Connect:        0    3   3.7      2      20
+Processing:    12   68 120.0     53    1057
+Waiting:        1   67 120.1     52    1050
+Total:         15   71 119.8     55    1058
+
+# 整个场景中所有请求的响应情况
+Percentage of the requests served within a certain time (ms)
+  50%     55
+  66%     63
+  75%     68
+  80%     71
+  90%     77
+  95%     88
+  98%    105
+  99%   1012
+ 100%   1058 (longest request)
+</code></pre>
+<p>这么多的指标，我们可以重点关注下面几个</p>
+<ul>
+<li>Requests per second</li>
+<li>Failed requests</li>
+<li>90%，95%和98%的响应时间</li>
+</ul>
+<p>第一个是吞吐量。<br>
+第二个是失败的请求数，这个数要尽可能的低，最好是0，没有失败的。设想一下，100个请求，80个都是失败的，这个结果还能有意义不。<br>
+第三个是响应时间，这个可以看到大部分请求的速度如何。</p>
+<p>进行压测时的一些小建议：</p>
+<ul>
+<li>压测尽可能让并发数从低往高慢慢递增，避免一开始就设的太大，一个比较好的参考依据是现在阶段线上环境的并发数</li>
+<li>压测的持续时间可以持续久一点，这样可以看到更多可能出现的情况，可以考虑5分钟，8分钟，15分钟等</li>
+<li>有条件的，压测和被压测的机器要独立，因为压测的时候也会有资源占用，可能会影响被压测的接口</li>
+<li>不要只看压测的结果数据，还要留意被压测机的cpu，内存等指标在压测时是否正常</li>
+<li>内网压测的效果达到预期后，再考虑外网的，网络因素，可控性不强</li>
+<li>数据库连接池的最大、最小连接数等要配成一致，JVM的启动参数也是一样，后面有时间再对这一块内容做补充。</li>
+</ul>
+
+                    
+                    <audio id="audio" loop="1" preload="auto" style="width: 100%;" controls="controls">
+                        <source type="audio/mpeg" src="/mp3/%e8%a1%97%e9%81%93%e7%9a%84%e5%af%82%e5%af%9e.mp3">
+                        <a href="/mp3/%e8%a1%97%e9%81%93%e7%9a%84%e5%af%82%e5%af%9e.mp3">/mp3/街道的寂寞.mp3</a>
+                    </audio>
+                </div>
+                <div class="comment-wrap">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relate">
+        <ul>
+            <h3 id="prev_next">
+                <em>相 关 文 章</em>
+                <span>
+                    <a href="javascript: window.scrollTo(0, 0);">
+                    返回顶部</a>
+                    
+                        <a href="https://www.lovelpy.cn/posts/redis%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%AE%9E%E7%8E%B0/" rel="prev">上一篇</a>
+                    
+                    
+                </span>
+            </h3>
+            
+            
+            
+                
+                    
+                
+                    
+                    <li>
+                        <div>
+                            <a class="relatea" href="https://www.lovelpy.cn/posts/Feign%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" title="Feign的实现原理">
+                            Feign的实现原理</a>
+                            <p>Feign的实现原理...</p>
+                        </div>
+                        
+                        <a href="https://www.lovelpy.cn/posts/Feign%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" title="Feign的实现原理">
+                            <img class="relateimg" src="https://cdn.jsdelivr.net/gh/shironekoa3/VsnekoGit@master/img/background.png" alt="Feign的实现原理">
+                        </a>
+                    </li>
+                    
+                
+            
+        </ul>
+    </div>
+</div>
+<p style="text-align: center;">
+  <a style="color: inherit" target="_blank" href="https://github.com/honjun/hugo-theme-diaspora"></a>
+</p>
+
+<script>
+  var siteTitle = "Kimmy's Blog";
+</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/InsightSearch.js"></script>
+</body>
+</html>
+
